@@ -1,9 +1,9 @@
 # language: pt
 Funcionalidade: Configurar produto
-Como cliente da EBAC-SHOP
-Quero configurar meu produto de acordo com meu tamanho e gosto
-E escolher a quantidade
-Para depois inserir no carrinho
+  Como cliente da EBAC-SHOP
+  Quero configurar meu produto de acordo com meu tamanho e gosto
+  E escolher a quantidade
+  Para depois inserir no carrinho
 
   Contexto:
     Dado que eu escolha um item na plataforma
@@ -21,28 +21,21 @@ Para depois inserir no carrinho
     Então a quantidade do produto deve ser atualizada
 
   Cenário: Adicionar produto ao carrinho com sucesso
-    Dado que eu selecione um item
-    E escolha o tamanho
-    E selecione a cor
-    E selecione a quantidade
-    Então serei informado que a quantidade máxima de itens no carrinho é de 10 produtos.
-    E serei direcionado à tela de checkout
+    Dado que eu selecione um item e escolha o tamanho, cor e quantidade
+    Então serei direcionado à tela de checkout
+    
 
   Cenário: Limitar a quantidade de produtos no carrinho
-    Quando eu selecionar um item
-    E selecionar a quantidade maior que 10 produtos
+    Quando eu selecionar um item e uma quantidade maior que 10 produtos
     Então deve aparecer a mensagem de erro "Limite máximo de itens excedido"
 
   Esquema do Cenário: Configurar produto com diferentes opções
-    Quando eu selecionar <item>
-    E escolher a <cor>
-    E escolher o <tamanho>
-    E escolher a <quantidade>
+    Quando eu selecionar <item>, escolher <cor>, <tamanho> e <quantidade>
     Então a mensagem deve ser <mensagem>
 
     Exemplos:
-      | item   | cor   | tamanho | quantidade | mensagem                          |
-      | Camisa | azul  | G       |          5 |                                   |
-      | Cueca  | preta | G       |         25 | "Limite máximo de itens excedido" |
-      | calça  | azul  | G       |         10 |                                   |
-      | cinto  | azul  | G       |         11 | "Limite máximo de itens excedido" |
+      | item   | cor   | tamanho | quantidade | mensagem                         |
+      | Camisa | azul  | G       | 5          |                                  |
+      | Cueca  | preta | G       | 25         | "Limite máximo de itens excedido"|
+      | calça  | azul  | G       | 10         |                                  |
+      | cinto  | azul  | G       | 11         | "Limite máximo de itens excedido"|

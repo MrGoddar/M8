@@ -1,16 +1,14 @@
 # language: pt
 Funcionalidade: Checkout
-Como cliente da EBAC-SHOP
-Quero fazer ou concluir meu cadastro
-Para finalizar minha compra
+  Como cliente da EBAC-SHOP
+  Quero fazer ou concluir meu cadastro
+  Para finalizar minha compra
 
   Contexto:
     Dado que eu não tenha cadastro na plataforma
 
   Cenário: Ser direcionado para a tela de criação de cadastro
-    Quando eu inserir os dados obrigatórios, que serão marcados por asteríscos.
-    E email válido
-    E criar minha senha com números e símbolos
+    Quando eu inserir os dados obrigatórios marcados por asteriscos, email válido e senha com números e símbolos
     Então serei direcionado para a página de checkout
 
   Cenário: Dados incompletos
@@ -26,14 +24,12 @@ Para finalizar minha compra
     Então a mensagem de erro "senha inválida" deve aparecer
 
   Esquema do Cenário: Autenticar criação de usuário
-    Quando eu inserir meus <dados>
-    E <email>
-    E criar minha <senha>
+    Quando eu inserir meus <dados>, <email> e <senha>
     Então a mensagem deve ser <mensagem>
 
     Exemplos:
-      | dados                      | email                     | senha     | mensagem           |
-      | Matheus Barros, 20/11/1995 | mateusbarrosbfr@gmail.com | ebac@123  |                    |
-      | João                       | joãomacedo12@gmail.com    | ebac@134  | "campos incompetos |
-      | Juca campos, 11/022/1985   | Jucabaleiro@@@yahoo       | ebac@1234 | "email inválido"   |
-      | Joana Ribeiro, 15/04/1997  | Joanaribs@gmail.com       | ebac142   | "senha inválida"   |
+      | dados                     | email                     | senha      | mensagem            |
+      | Matheus Barros, 20/11/1995| mateusbarrosbfr@gmail.com | ebac@123   |                     |
+      | João                      | joãomacedo12@gmail.com    | ebac@134   | "campos incompetos  |
+      | Juca campos, 11/022/1985  | Jucabaleiro@@@yahoo       | ebac@1234  | "email inválido"    |
+      | Joana Ribeiro, 15/04/1997 | Joanaribs@gmail.com       | ebac142    | "senha inválida"    |
